@@ -14,7 +14,7 @@ class Snake {
     this.score = 0;
     this.body = [createVector(0, 0)]
     this.vel = createVector(20, 0);
-    this.food = this.new_food();
+    this.new_food();
   }
 
   update() {
@@ -67,7 +67,7 @@ class Snake {
 
   eat() {
     if (dist(this.body[0].x, this.body[0].y, this.food.x, this.food.y) == 0) {
-      this.food = this.new_food();
+      this.new_food();
       this.addbody();
       this.score++;
     }
