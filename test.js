@@ -11,7 +11,6 @@ class Snake {
   constructor(x, y) {
     createCanvas(900, 900);
     frameRate(20);
-    this.score = 0;
     this.body = [createVector(0, 0)]
     this.vel = createVector(20, 0);
     this.new_food();
@@ -22,9 +21,7 @@ class Snake {
     this.move();
     this.eat();
   }
-  write_score() {
-  }
-
+ 
   game_over() {
   }
 
@@ -35,10 +32,6 @@ class Snake {
       fill("white");
       rect(pos.x, pos.y, 20, 20);
     });
-
-    fill('red');
-    rect(this.food.x, this.food.y, 20, 20);
-    this.write_score();
   }
 
   bite() {
@@ -75,7 +68,6 @@ class Snake {
     if (dist(this.body[0].x, this.body[0].y, this.food.x, this.food.y) == 0) {
       this.new_food();
       this.addbody();
-      this.score++;
     }
   }
 }
