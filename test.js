@@ -62,7 +62,7 @@ class Snake {
     var x = this.body[0].x + this.vel.x;
     var y = this.body[0].y + this.vel.y;
     var head = [createVector(x, y)];
-    head.push(...array.vag(), this.body[this.body.length - 1]);
+    head.push(...array);
     this.body = head;
 
   }
