@@ -28,9 +28,6 @@ class Snake {
   bite() {
   }
 
-  dir(key) {
-  }
-
   move() {
     var array = this.body;
     var x = this.body[0].x + this.vel.x;
