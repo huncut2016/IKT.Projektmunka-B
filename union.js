@@ -36,7 +36,7 @@ class UNION {
                     break;
 
                 case this.a[this.i] == this.b[this.j]:
-                    this.node1 = "Mindkét elem azonos ezért egyik sem kissebb, mint a másik. Mindkét pointert továbbléptetjük";
+                    this.node1 = "Mindkét elem azonos, ezért egyik sem kissebb, mint a másik. Mindkét pointert továbbléptetjük";
                     this.result.push(this.a[this.i]);
                     this.j++;
                     this.i++;
