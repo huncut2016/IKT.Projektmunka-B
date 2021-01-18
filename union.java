@@ -17,15 +17,15 @@ public class union {
         int aSize = a.length;
         int bSize = b.length;
 
-        for (int i = 0, j = 0; i < aSize && j < bSize;) {
-            if (aSize < i) {
+        for (int i = 0, j = 0; (i < aSize) || (j < bSize);) {
+            if (aSize-1 < i) {
                 for (int k = j; k < bSize; k++) {
                     result.add(b[k]);
                 }
                 break;
             }
 
-            if (bSize < j) {
+            if (bSize-1 < j) {
                 for (int k = i; k < aSize; k++) {
                     result.add(a[k]);
                 }
