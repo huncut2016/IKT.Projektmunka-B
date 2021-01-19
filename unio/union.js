@@ -25,6 +25,8 @@ class UNION {
                         this.result.push(this.b[k]);
                     }
                     this.con = false;
+                    this.i = this.aSize;
+                    this.j = this.bSize;
                     break;
 
                 case bLast < this.j:
@@ -32,6 +34,8 @@ class UNION {
                     for (let k = this.i; k < this.aSize; k++) {
                         this.result.push(this.a[k]);
                     }
+                    this.i = this.aSize;
+                    this.j = this.bSize;
                     this.con = false;
                     break;
 
