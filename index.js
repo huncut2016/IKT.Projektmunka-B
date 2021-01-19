@@ -7,32 +7,36 @@ let Markers2Container = document.getElementById("markersB");
 let elements2Container = document.getElementById("elemsB");
 
 
-let union = new UNION(arr1, arr2);
+let union;
+generate();
 
 
+function generate(){
+	union = new UNION(arr1, arr2);
+	createTable(elements1Container, Markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
+	createTable(elements2Container, Markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
+	createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
+}
 
-createTable(elements1Container, Markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
-createTable(elements2Container, Markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
-createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
 
-function createTable(elementElements, elementMarker, array, constumClass, labelElems, labelMarkers) {
-    let bodyMidElemnts = "";
-    let bodyMidMarkers = "";
+function createTable(elementElements, elementMarker, array, costumID, labelElems, labelMarkers) {
+    let bodyElemnts = "";
+    let bodyMarkers = "";
 
     for (let i = 0; i < array.length; i++) {
-        bodyMidElemnts += `<th class="tg-ycr8" id=${i}>${array[i]}</th>`;
+        bodyElemnts += `<th class="tg-ycr8" id=${i}>${array[i]}</th>`;
         if (i == 0) {
-            bodyMidMarkers += `<th class="tg-ycr8 marker${constumClass}" id=${constumClass}marker${i}>&#8657</th>`;
+            bodyMarkers += `<th class="tg-ycr8 marker${costumID}" id=${costumID}marker${i}><span class="marker">&#8593</span></th>`;
 
         } else {
 
-            bodyMidMarkers += `<th class="tg-ycr8 marker${constumClass} markers" id=${constumClass}marker${i}>&#8657</th>`;
+            bodyMarkers += `<th class="tg-ycr8 markers marker${costumID}" id=${costumID}marker${i}><span class="marker">&#8593</span></th>`;
         }
 
     }
 
-    elementElements.innerHTML = labelElems + bodyMidElemnts;
-    elementMarker.innerHTML = labelMarkers + bodyMidMarkers;
+    elementElements.innerHTML = labelElems + bodyElemnts;
+    elementMarker.innerHTML = labelMarkers + bodyMarkers;
 
 }
 
@@ -67,4 +71,15 @@ document.getElementById("reset").onclick = function() {
     createTable(elements2Container, Markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
     createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
 
+}
+
+document.getElementById("addArrays").onclick = function () {
+    let inputArray1 = eval(prompt("Írd be az A tömböt! (példa: [1,2,3,4])"));
+    let inputArray2 = eval(prompt("Írd be a B tömböt!(példa: [1,2,3,4])"));
+
+    arr1 = inputArray1.sort((a, b) => a - b);
+    arr2 = inputArray2.sort((a, b) => a - b);
+
+    generate();
+    
 }
