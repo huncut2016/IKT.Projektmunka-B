@@ -20,7 +20,7 @@ class UNION {
         if (((this.i < this.aSize) || (this.j < this.bSize)) && this.con) {
             switch (true) {
                 case aLast < this.i:
-                    this.node1 = "Az \"a\" halmaznak nincs több vizsgálható eleme, ezért belerakjuk a \"b\" összes többi elemét az únióba";
+                    this.node1 = "Kifogyott az A halmaz, ezért a BPointer utáni összes elemet belerakjuk az eredményhalmazba";
                     for (let k = this.j; k < this.bSize; k++) {
                         this.result.push(this.b[k]);
                     }
@@ -28,7 +28,7 @@ class UNION {
                     break;
 
                 case bLast < this.j:
-                    this.node1 = "Az \"b\" halmaznak nincs több vizsgálható eleme, ezért belerakjuk a \"a\" összes többi elemét az únióba";
+                    this.node1 = "Kifogyott a B halmaz, ezért a APointer utáni összes elemet belerakjuk az eredményhalmazba";
                     for (let k = this.i; k < this.aSize; k++) {
                         this.result.push(this.a[k]);
                     }
@@ -36,20 +36,20 @@ class UNION {
                     break;
 
                 case this.a[this.i] == this.b[this.j]:
-                    this.node1 = "Mindkét elem azonos, ezért egyik sem kissebb, mint a másik. Mindkét pointert továbbléptetjük";
+                    this.node1 = "Mindkét elem azonos, ezért az egyiket belerakjuk az eredményhalmazba. APointert és Bpointert is továbbléptetjük";
                     this.result.push(this.a[this.i]);
                     this.j++;
                     this.i++;
                     break;
 
                 case this.a[this.i] < this.b[this.j]:
-                    this.node1 = "\"a\" jelen eleme kissebb, mint \"b\" eleme, ezért a jelenlegi elemét hozzáadjuk és továbbléptetjük a Pointert"
+                    this.node1 = "Az APointer fölött álló szám kissebb, mint a BPointer fölött álló szám. Ezért a APointer számát belerakjuk az eredményhalmazba és APointert továbbléptetjük"
                     this.result.push(this.a[this.i]);
                     this.i++;
                     break;
 
                 case this.b[this.j] < this.a[this.i]:
-                    this.node1 = "\"b\" jelen eleme kissebb, mint \"a\" eleme, ezért a jelenlegi elemét hozzáadjuk és továbbléptetjük a Pointert"
+                    this.node1 = "A BPointer fölött álló szám kissebb, mint az APointer fölött álló szám. Ezért a BPointer számát belerakjuk az eredményhalmazba és BPointert továbbléptetjük"
                     this.result.push(this.b[this.j]);
                     this.j++;
                     break;
