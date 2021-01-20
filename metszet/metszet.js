@@ -41,7 +41,7 @@ class Metszet {
                     break;
 
                 case this.b[this.j] < this.a[this.i]:
-                    this.node1 = "BPointer fölött álló szám kissebb, mint az APointer fölött álló. (nem egyenlőek) ."
+                    this.node1 = "BPointer fölött álló szám kissebb, mint az APointer fölött álló. (nem egyenlőek) . Ezért A BPointert továbbléptetjük."
                     this.j++;
                     break;
             }
