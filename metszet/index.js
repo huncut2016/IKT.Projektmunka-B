@@ -1,9 +1,9 @@
 let arr1 = [-1, 0, 2, 5, 9, 10];
 let arr2 = [0, 2, 4, 5, 6, 7, 9];
-let Markers1Container = document.getElementById("markersA");
+let markers1Container = document.getElementById("markersA");
 let elements1Container = document.getElementById("elemsA");
 
-let Markers2Container = document.getElementById("markersB");
+let markers2Container = document.getElementById("markersB");
 let elements2Container = document.getElementById("elemsB");
 
 
@@ -13,8 +13,8 @@ generate();
 
 function generate(){
 	metszet = new Metszet(arr1, arr2);
-	createTable(elements1Container, Markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
-	createTable(elements2Container, Markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
+	createTable(elements1Container, markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
+	createTable(elements2Container, markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
 	createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
 }
 
@@ -67,8 +67,8 @@ document.getElementById("next").onclick = function() {
 
 document.getElementById("reset").onclick = function() {
     metszet = new Metszet(arr1, arr2);
-    createTable(elements1Container, Markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
-    createTable(elements2Container, Markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
+    createTable(elements1Container, markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
+    createTable(elements2Container, markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
     createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
 
 }
