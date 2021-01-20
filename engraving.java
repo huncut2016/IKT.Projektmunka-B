@@ -11,7 +11,7 @@ public class engraving {
         int aSize = a.length;
         int bSize = b.length;
 
-        for(int i = 0, j = 0; i < aSize && j < bSize ;){
+        for(int i = 0, j = 0; (i < aSize) || (j < bSize) ;){
             if(aSize-1 < i || bSize-1 < j){
                 return result;
             }
