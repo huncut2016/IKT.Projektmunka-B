@@ -65,13 +65,7 @@ document.getElementById("next").onclick = function() {
     createTable(document.getElementById("results"), "", state.currentResult, "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
 }
 
-document.getElementById("reset").onclick = function() {
-    metszet = new Metszet(arr1, arr2);
-    createTable(elements1Container, markers1Container, arr1, "1", '<th class="tg-ycr8">A elemei</th>', '<th class="tg-ycr8">A pointere</th>');
-    createTable(elements2Container, markers2Container, arr2, "2", '<th class="tg-ycr8">B elemei</th>', '<th class="tg-ycr8">B pointere</th>');
-    createTable(document.getElementById("results"), "", [], "", '<th class="tg-ycr8">Jelenlegi állás</th>', "");
-
-}
+document.getElementById("reset").onclick = generate;
 
 document.getElementById("addArrays").onclick = function () {
     let inputArray1 = eval(prompt("Írd be az A tömböt! (példa: [1,2,3,4])"));
