@@ -58,7 +58,9 @@ class UNION {
                     this.j++;
                     break;
             }
-        }
+        } else {
+		this.node1 = "vége";
+	}
     }
 
     show() {

@@ -17,6 +17,8 @@ class MAX {
 
 			}
 			this.i++;
+		}else{
+			this.node1 = "vége";
 		}
 	}
 

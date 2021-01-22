@@ -1,0 +1,101 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-ycr8 {
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg-ycr8 {
+    min-width: 5em;
+    max-width: 5em;
+}
+
+.markers {
+    opacity: 0;
+    transition: 2s;
+}
+
+.marker {
+    color: red;
+    transition: 2s;
+    font-size: 2em;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.container::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgb(255,255,255);
+    background-color: rgb(255,255,255);
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.container::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background-color: black;
+}
+
+button {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1rem;	
+}
+
+input {
+	padding: 10px;
+	border: solid 1px;
+	border-radius: 5px;
+
+}
